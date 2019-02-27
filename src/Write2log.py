@@ -3,7 +3,7 @@ import datetime
 
 print("====== Write2Log.py - Start ============================================")
 strMessage = "Boot - presumably"
-strComputer = "some computer"
+strComputer = " some computer"
 if len(sys.argv) > 1:
 	strMessage = sys.argv[1].strip()
 	if len(sys.argv) > 2:

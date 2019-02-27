@@ -6,15 +6,15 @@ import datetime
 NORMAL_HOURS = 7.5
 
 def ceilfloor2minute(dtt, mode='ceil', step=5):
+    ##print("dtt: {}".format(dtt))
     if mode in ['ceil', 'floor']:
-        hour = dtt.hour
-        minu = dtt.minute
-        while minu%step != 0:
+        while dtt.minute%step != 0:
+            ##print("dtt: {}".format(dtt))
             if mode == 'ceil':
-                minu -= 1
+                dtt = dtt - datetime.timedelta(minutes=1)
             elif mode == 'floor':
-                minu += 1
-        return datetime.datetime(dtt.year, dtt.month, dtt.day, hour, minu)
+                dtt = dtt + datetime.timedelta(minutes=1)
+        return dtt # datetime.datetime(dtt.year, dtt.month, dtt.day, hour, minu)
     else:
         return dtt
 
